@@ -3,6 +3,13 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
+
+# Get MongoDB credentials from environment variables
+mongodb_username = os.getenv('MONGODB_USERNAME')
+mongodb_password = os.getenv('MONGODB_PASSWORD')
+
+
+
 mongodb_client = MongoClient(
     "mongodb+srv://user1:user01pass@cluster0.9jy65.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 db = mongodb_client["shop_db"]
